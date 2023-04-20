@@ -11,17 +11,17 @@ const one_day_rental = 1;
 const days_rented_7 = 7;
 const days_rented_3 = 3;
 const totalAmount = (numberOfDays) => {
+  let special = 0;
   let total = dailyPrice * (numberOfDays + one_day_rental);
-  let totalWithSpecial;
-  let special;
+  let totalWithSpecial = total - special;
   if (numberOfDays === days_rented_7) {
     special = 50;
-    return (totalWithSpecial = total - special);
+    return totalWithSpecial;
   } else if (numberOfDays === days_rented_3) {
     special = 20;
-    return (totalWithSpecial = total - special);
+    return totalWithSpecial;
   } else if (numberOfDays === one_day_rental) {
-    return dailyPrice;
+    return totalWithSpecial;
   } else {
     return "Please choose the correct number of days to view your total";
   }
